@@ -1,7 +1,7 @@
 // => JavaScript Vanilla
 const $app = document.querySelector(".app");
 const avatar = (params) => {
-  const src = `https://randomuser.me/api/portraits/lego/${params.id}.jpg`;
+  const src = `https://randomuser.me/api/portraits/men/${params.id}.jpg`;
   return `
     <picture>
         <img src='${src}' /> 
@@ -10,7 +10,7 @@ const avatar = (params) => {
     `;
 };
 
-for (let i = 0; i < 9; i++) {
+for (let i = 0; i < 40; i++) {
   $app.innerHTML += avatar({ id: i, nombre: `Avatar ${i + 1}` });
 }
 
@@ -27,7 +27,7 @@ const R = React.createElement;
 const useState = React.useState;
 
 const Avatares = ({ id, name = `user ${id}`, size }) => {
-  const src = `https://randomuser.me/api/portraits/lego/${id}.jpg`;
+  const src = `https://randomuser.me/api/portraits/women/${id}.jpg`;
   const [enable, setEnable] = useState(true);
 
   // primera forma sin JSX ==> return R('img',{src,h2:'avatar'})
@@ -44,23 +44,26 @@ const Avatares = ({ id, name = `user ${id}`, size }) => {
           src={src}
         />
       ) : (
-        <img src="https://randomuser.me/api/portraits/men/1.jpg" />
+        <img src="https://randomuser.me/api/portraits/lego/6.jpg" />
       )}
       <h4> {enable ? name : "desactivada"} </h4>
     </picture>
   );
 };
 
-// ReactDOM.render(R(avatares, { id: 6 }), $main);
 
-ReactDOM.render(
-  <div>
-    <Avatares id={1} name="avatar 1 " size="small" />
-    <Avatares id={2} name="avatar 2" />
-    <Avatares size="small" />
-  </div>,
-  $main
-);
+
+  ReactDOM.render(
+    <div>
+      <Avatares id={1} name={`Avatar` } size="small"/>
+      <Avatares id={2} name={`Avatar `} />
+      <Avatares id={3} name={`Avatar `} />
+      <Avatares id={4} name={`Avatar`} size="small"/>
+      <Avatares name="pelos"/>
+    </div>,
+    $main
+  );
+
 
 //=> Contador
 const $dev = document.querySelector(".dev");
@@ -77,12 +80,14 @@ function Contador() {
       >
         Aumentar ++
       </button>
-      <button onClick={()=>{
-        updateContador(valueContador - 1 )
-      }} >Restar -- </button>
-      <h1> 
-          {valueContador}
-      </h1>
+      <button
+        onClick={() => {
+          updateContador(valueContador - 1);
+        }}
+      >
+        Restar --{" "}
+      </button>
+      <h1>{valueContador}</h1>
     </div>
   );
 }
