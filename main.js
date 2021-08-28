@@ -20,7 +20,7 @@ $app.querySelectorAll("img").forEach((img) => {
   });
 });
 
-//React
+//=> React
 
 const $main = document.querySelector(".main");
 const R = React.createElement;
@@ -29,6 +29,7 @@ const useState = React.useState;
 const Avatares = ({ id, name = `user ${id}`, size }) => {
   const src = `https://randomuser.me/api/portraits/lego/${id}.jpg`;
   const [enable, setEnable] = useState(true);
+
   // primera forma sin JSX ==> return R('img',{src,h2:'avatar'})
   const clasName = enable ? "" : "desbanecer";
   const pictureClassName = size === "small" ? "is-small" : "";
@@ -51,6 +52,7 @@ const Avatares = ({ id, name = `user ${id}`, size }) => {
 };
 
 // ReactDOM.render(R(avatares, { id: 6 }), $main);
+
 ReactDOM.render(
   <div>
     <Avatares id={1} name="avatar 1 " size="small" />
@@ -58,4 +60,36 @@ ReactDOM.render(
     <Avatares size="small" />
   </div>,
   $main
+);
+
+//=> Contador
+const $dev = document.querySelector(".dev");
+
+function Contador() {
+  const [valueContador, updateContador] = useState(0);
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          updateContador(valueContador + 1);
+        }}
+      >
+        Aumentar ++
+      </button>
+      <button onClick={()=>{
+        updateContador(valueContador - 1 )
+      }} >Restar -- </button>
+      <h1> 
+          {valueContador}
+      </h1>
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <div>
+    <Contador />
+  </div>,
+  $dev
 );

@@ -8,30 +8,34 @@ body {
 h1 {
     text-align: center;
 }
-h2{
-    border:1px solid #ffffff;
-    padding:5px;
-    margin-bottom:50px;
-    color:yellow;
-    width:350px;
+
+h2 {
+    border: 1px solid #ffffff;
+    padding: 5px;
+    margin-bottom: 50px;
+    color: yellow;
+    width: 350px;
     text-align: center;
 }
-.app ,.main{
+
+.app,
+.main {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-picture{
+picture {
     width: 100px;
     text-align: center;
     align-items: center;
     margin: 26px;
     width: 100px;
 }
-picture.is-small img{
-    width:50px;
+
+picture.is-small img {
+    width: 50px;
     text-align: center;
     align-items: center;
     margin: 26px;
@@ -41,8 +45,17 @@ picture.is-small img{
 img {
     border-radius: 50%;
     box-shadow: 0 0 9px #ffffff;
-    width:100px;
+    width: 100px;
 }
-img.desbanecer{
+
+img.desbanecer {
     opacity: 0.3;
+}
+
+button {
+    color: #ffffff;
+    background: #1b0037;
+    padding: 10px;
+    margin: 26px;
+    border: none;
 }
