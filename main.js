@@ -51,19 +51,16 @@ const Avatares = ({ id, name = `user ${id}`, size }) => {
   );
 };
 
-
-
-  ReactDOM.render(
-    <div>
-      <Avatares id={1} name={`Avatar` } size="small"/>
-      <Avatares id={2} name={`Avatar `} />
-      <Avatares id={3} name={`Avatar `} />
-      <Avatares id={4} name={`Avatar`} size="small"/>
-      <Avatares name="pelos"/>
-    </div>,
-    $main
-  );
-
+ReactDOM.render(
+  <div>
+    <Avatares id={1} name={`Avatar`} size="small" />
+    <Avatares id={2} name={`Avatar `} />
+    <Avatares id={3} name={`Avatar `} />
+    <Avatares id={4} name={`Avatar`} size="small" />
+    <Avatares name="pelos" />
+  </div>,
+  $main
+);
 
 //=> Contador
 const $dev = document.querySelector(".dev");
